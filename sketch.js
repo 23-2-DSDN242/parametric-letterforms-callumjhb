@@ -13,28 +13,59 @@ const canvasHeight = 500;
  */
 
 const letterA = {
-  "size": 80,
-  "offsetx": 0,
-  "offsety": 35
+  "circle1size": 0,
+  "circle2size": 0,
+  "circle1offsetx": 0,
+  "circle1offsety": 35,
+  "circle2offsetx": 0,
+  "circle2offsety": 35,
+  "triSize": 70,
+  "triOffsetX": 0,
+  "triOffsetY": 0,
+  "linebeginX": 0,
+  "linebeginY": 0,
+  "lineendX": 0,
+  "lineendY": 80
 }
 
 const letterB = {
-  "size": 150,
-  "offsetx": 0,
-  "offsety": -145
+  "circle1size": 50,
+  "circle2size": 0,
+  "circle1offsetx": 0,
+  "circle1offsety": 35,
+  "circle2offsetx": 0,
+  "circle2offsety": 35,
+  "triSize": 0,
+  "triOffsetX": 0,
+  "triOffsetY": 0,
+  "linebeginX": 0,
+  "linebeginY": 0,
+  "lineendX": 0,
+  "lineendY": 0
 }
 
 const letterC = {
-  "size": 100,
-  "offsetx": 30,
-  "offsety": 0
+  "circle1size": 0,
+  "circle2size": 0,
+  "circle1offsetx": 0,
+  "circle1offsety": 35,
+  "circle2offsetx": 0,
+  "circle2offsety": 35,
+  "triSize": 0,
+  "triOffsetX": 0,
+  "triOffsetY": 0,
+  "linebeginX": 0,
+  "linebeginY": 80,
+  "lineendX": 80,
+  "lineendY": 80
 }
 
-const backgroundColor  = "#acf2e7";
+const backgroundColor  = "#fffae7";
 
 const darkGreen  = "#26b29d";
 const lightGreen  = "#30dfc4";
-const strokeColor  = "#0a2d27";
+const strokeColor  = "#000000";
+const yellow = "#fffc33";
 
 function setup () {
   // create the drawing canvas, save the canvas element
@@ -47,6 +78,7 @@ function setup () {
 
   // with no animation, redrawing the screen is not necessary
   noLoop();
+
 }
 
 function draw () {
@@ -64,16 +96,31 @@ function draw () {
 }
 
 function drawLetter(posx, posy, letterData) {
-  // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = posx + letterData["offsetx"];
-  let pos2y = posy + letterData["offsety"];
+
+  // determine parameters for first circle
+  let size1 = letterData["size"];
+  let pos1x = posx + letterData["circle1offsetx"];
+  let pos1y = posy + letterData["circle1offsety"];
+  
+  let triHeight = letterData["triSize"];
+
+  let linex1 = posx + letterData["linebeginX"];
+  let linex2 = posx + letterData["lineendX"];
+  let liney1 = posy + letterData["linebeginY"];
+  let liney2 = posy + letterData["lineendY"];
 
   // draw two circles
-  fill(darkGreen);
-  ellipse(posx, posy, 150, 150);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+   fill(lightGreen);
+  ellipse(pos1x, pos1y, size1, size1);
+
+  // draw triangle
+  fill(yellow);
+  triangle(posx, posy-triHeight, posx-triHeight, posy+triHeight, posx+triHeight, posy+triHeight);
+
+  //draw lines
+  line(linex1-10,liney1, linex2-10, liney2);
+  line(linex1,liney1, linex2, liney2);
+  line(linex1+10,liney1, linex2+10, liney2);
 }
 
 function keyTyped() {
