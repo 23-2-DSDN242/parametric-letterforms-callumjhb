@@ -13,51 +13,66 @@ const canvasHeight = 500;
  */
 
 const letterA = {
+  "trianglesize": 100,
+  "triangleorientation": 1,
+
   "circle1size": 0,
   "circle2size": 0,
-  "circle1offsetx": 0,
-  "circle1offsety": 35,
-  "circle2offsetx": 0,
-  "circle2offsety": 35,
-  "triSize": 70,
-  "triOffsetX": 0,
-  "triOffsetY": 0,
-  "linebeginX": 0,
-  "linebeginY": 0,
-  "lineendX": 0,
-  "lineendY": 80
+  "circlex": 0,
+  "circle1y": 0,
+  "circle2y": 0,
+
+  "linewidth": 20,
+  "lineheight": 10,
+  "linex": 10,
+  "liney": -30,
+
+  "rectanglewidth": 0,
+  "rectangleheight": 0,
+  "rectanglex": 0,
+  "rectangley": 0
 }
 
 const letterB = {
-  "circle1size": 50,
-  "circle2size": 0,
-  "circle1offsetx": 0,
-  "circle1offsety": 35,
-  "circle2offsetx": 0,
-  "circle2offsety": 35,
-  "triSize": 0,
-  "triOffsetX": 0,
-  "triOffsetY": 0,
-  "linebeginX": 0,
-  "linebeginY": 0,
-  "lineendX": 0,
-  "lineendY": 0
+  "circle1size": 100,
+  "circle2size": 100,
+  "circlex": 12.5,
+  "circle1y": -50,
+  "circle2y": 50,
+
+  "lineheight": 30,
+  "linewidth": 15,
+  "linex": 12.5,
+  "liney": 35,
+
+  "rectangleheight": 200,
+  "rectanglewidth": 25,
+  "rectanglex": -62.5,
+  "rectangley": -100,
+
+  "trianglesize": 0,
+  "triangleorientation": 1
 }
 
 const letterC = {
-  "circle1size": 0,
-  "circle2size": 0,
-  "circle1offsetx": 0,
-  "circle1offsety": 35,
-  "circle2offsetx": 0,
-  "circle2offsety": 35,
-  "triSize": 0,
-  "triOffsetX": 0,
-  "triOffsetY": 0,
-  "linebeginX": 0,
-  "linebeginY": 80,
-  "lineendX": 80,
-  "lineendY": 80
+  "circle1size": 50,
+  "circle2size": 50,
+  "circlex": 25,
+  "circle1y": -75,
+  "circle2y": 75,
+
+  "lineheight": 0,
+  "linewidth": 0,
+  "linex": 0,
+  "liney": 0,
+
+  "rectangleheight": 200,
+  "rectanglewidth": 50,
+  "rectanglex": -50,
+  "rectangley": -100,
+
+  "trianglesize": 0,
+  "triangleorientation": 1
 }
 
 const backgroundColor  = "#fffae7";
@@ -96,31 +111,54 @@ function draw () {
 }
 
 function drawLetter(posx, posy, letterData) {
-
-  // determine parameters for first circle
-  let size1 = letterData["size"];
-  let pos1x = posx + letterData["circle1offsetx"];
-  let pos1y = posy + letterData["circle1offsety"];
+  // determine parameters for triangle   
+  let triPosx = posx + letterData["trianglesize"];
+  let triPosy = posy + letterData["trianglesize"];
+  let triAngle = letterData["triangleorientation"];
   
-  let triHeight = letterData["triSize"];
+  // determine parameters for first circle
+  let circSize1 = letterData["circle1size"];
+  let circPosx = posx + letterData["circlex"];
+  let circPos1y = posy + letterData["circle1y"];
 
-  let linex1 = posx + letterData["linebeginX"];
-  let linex2 = posx + letterData["lineendX"];
-  let liney1 = posy + letterData["linebeginY"];
-  let liney2 = posy + letterData["lineendY"];
+  // determine parameters for second circle
+  let circSize2 = letterData["circle2size"];
+  let circPos2y = posy + letterData["circle2y"];
 
-  // draw two circles
-   fill(lightGreen);
-  ellipse(pos1x, pos1y, size1, size1);
+  // determine parameters for rectangle
+  let rectWidth = letterData["rectanglewidth"];
+  let rectHeight = letterData["rectangleheight"];
+  let rectPosx = posx + letterData["rectanglex"];
+  let rectPosy = posy + letterData["rectangley"];
 
-  // draw triangle
-  fill(yellow);
-  triangle(posx, posy-triHeight, posx-triHeight, posy+triHeight, posx+triHeight, posy+triHeight);
+  // determine parameters for lines
+  let lineWidth = letterData["linewidth"];
+  let lineHeight = letterData["lineheight"];
+  let linePosx = posx + letterData["linex"];
+  let linePosy = posy + letterData["liney"];
 
-  //draw lines
-  line(linex1-10,liney1, linex2-10, liney2);
-  line(linex1,liney1, linex2, liney2);
-  line(linex1+10,liney1, linex2+10, liney2);
+  
+  //draw triangle
+  triangle(0, triSize * -triAngle, triSize * -triAngle,triSize * triAngle, triSize * -triAngle,triSize * triAngle);
+  
+  // draw first circle
+  fill(lightGreen);
+  ellipse(circPosx, circPos1y, circSize1, circSize1);
+
+  // draw second circle
+  fill(lightGreen);
+  ellipse(circPosx, circPos2y, circSize2, circSize2);
+
+  // draw rectangle
+  rect(rectPosx, rectPosy, rectWidth, rectHeight);
+
+  // draw lines
+  line(linePosx-lineWidth, linePosy, linePosx-lineWidth, linePosy+lineHeight);
+  line(linePosx, linePosy, linePosx, linePosy+lineHeight);  
+  line(linePosx+lineWidth, linePosy, linePosx+lineWidth, linePosy+lineHeight);
+  
+ 
+
 }
 
 function keyTyped() {
