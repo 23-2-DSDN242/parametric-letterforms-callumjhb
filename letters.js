@@ -5,24 +5,83 @@ const alphabet = {
     "offsety": 0
   },
   "A": {
-    "size": 40,
-    "offsetx": 0,
-    "offsety": 17
+    "triangleorientation": 1,
+
+  "circle1size": 0,
+  "circle2size": 0,
+  "circlex": 0,
+  "circle1y": -80,
+  "circle2y": -80,
+
+  "linewidth": 15,
+  "lineheight": 58,
+  "linex": 0,
+  "liney": 50,
+
+  "rectanglewidth": 0,
+  "rectangleheight": 0,
+  "rectanglex": 0,
+  "rectangley": 0
   },
   "B": {
-    "size": 75,
-    "offsetx": 0,
-    "offsety": -70
+  "trianglesize": 0,
+  "triangleorientation": 0,
+  
+  "circle1size": 100,
+  "circle2size": 100,
+  "circlex": 12.5,
+  "circle1y": -50,
+  "circle2y": 50,
+
+  "linewidth": 15,
+  "lineheight": 30,
+  "linex": 12.5,
+  "liney": 35,
+
+  "rectanglewidth": 25,
+  "rectangleheight": 200,
+  "rectanglex": -62.5,
+  "rectangley": -100
   },
   "C": {
-    "size": 50,
-    "offsetx": 15,
-    "offsety": 0
+    "trianglesize": 0,
+    "triangleorientation": 0,
+  
+    "circle1size": 50,
+    "circle2size": 50,
+    "circlex": 25,
+    "circle1y": -75,
+    "circle2y": 75,
+  
+    "linewidth": 0,
+    "lineheight": 0,
+    "linex": 0,
+    "liney": 0,
+  
+    "rectanglewidth": 50,
+    "rectangleheight": 200,
+    "rectanglex": -50,
+    "rectangley": -100
   },
   "D": {
-    "size": 50,
-    "offsetx": 15,
-    "offsety": 0
+    "trianglesize": 10,
+    "triangleorientation": 1,
+  
+    "circle1size": 10,
+    "circle2size": 10,
+    "circlex": 0,
+    "circle1y": -10,
+    "circle2y": 10,
+  
+    "linewidth": 10,
+    "lineheight": 10,
+    "linex": 0,
+    "liney": 0,
+  
+    "rectanglewidth": 50,
+    "rectangleheight": 200,
+    "rectanglex": -50,
+    "rectangley": -100
   },
   "E": {
     "size": 50,
