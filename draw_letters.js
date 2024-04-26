@@ -14,12 +14,12 @@ function drawLetter(letterData) {
   strokeWeight(4);
 
  // determine parameters for triangle   
- let triPointx = 0;
- let triPointy = -85*letterData["triangleorientation"];
- let triLeftx = -65*letterData["triangleorientation"];
- let triLefty = 100*letterData["triangleorientation"];
- let triRightx = 65*letterData["triangleorientation"];
- let triRighty = 100*letterData["triangleorientation"];
+ let triPointx = 50;
+ let triPointy = letterData["triangleorientation"];
+ let triLeftx = 0;
+ let triLefty = 200*letterData["triangleorientation"];
+ let triRightx = 100;
+ let triRighty = 200*letterData["triangleorientation"];
  
  // determine parameters for first circle
  let circSize1 = letterData["circle1size"];
