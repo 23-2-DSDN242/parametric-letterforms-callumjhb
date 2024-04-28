@@ -362,9 +362,21 @@ const alphabet = {
     "rectangley": 0
   },
   "V": {
-    "size": 50,
-    "offsetx": 15,
-    "offsety": 0
+    "circle1size": 0,
+    "circle2size": 100,
+    "circlex": 50,
+    "circle1y": 50,
+    "circle2y": 150,
+  
+    "linewidth": 0,
+    "lineheight": 150,
+    "linex": 50,
+    "liney": 0,
+  
+    "rectanglewidth": 100,
+    "rectangleheight": 175,
+    "rectanglex": 0,
+    "rectangley": 0
   },
   "W": {
     "circle1size": 100,
@@ -469,21 +481,21 @@ const alphabet = {
     "rectangley": 0
   },
   "2": {
-    "circle1size": 30,
-    "circle2size": 0,
-    "circlex": 25,
-    "circle1y": 30,
-    "circle2y": 30,
+    "circle1size": 75,
+    "circle2size": 25,
+    "circlex": 37.5,
+    "circle1y": 37.5,
+    "circle2y": 37.5,
   
-    "linewidth": 25,
-    "lineheight": 200,
-    "linex": 75,
-    "liney": 0,
+    "linewidth": 12.5,
+    "lineheight": 162.5,
+    "linex": 62.5,
+    "liney": 37.5,
   
-    "rectanglewidth": 50,
-    "rectangleheight": 200,
-    "rectanglex": 50,
-    "rectangley": 0
+    "rectanglewidth": 62.5,
+    "rectangleheight": 25,
+    "rectanglex": 37.5,
+    "rectangley": 175
   },
   "3": {
     "circle1size": 100,
