@@ -1,8 +1,20 @@
 const alphabet = {
   "default": {
-    "size": 40,
-    "offsetx": 0,
-    "offsety": 0
+    "circle1size": 100,
+    "circle2size": 75,
+    "circlex": 50,
+    "circle1y": 150,
+    "circle2y": 80,
+
+    "linewidth": 20,
+    "lineheight": 0,
+    "linex": 50,
+    "liney": 80,
+
+    "rectanglewidth": 20,
+    "rectangleheight": 0,
+    "rectanglex": 40,
+    "rectangley": 80
   },
   "A": {
     "circle1size": 100,
@@ -160,7 +172,7 @@ const alphabet = {
   "J": {
     "circle1size": 0,
     "circle2size": 50,
-    "circlex": 25,
+    "circlex": 33.3,
     "circle1y": 170,
     "circle2y": 170,
   
@@ -194,26 +206,26 @@ const alphabet = {
   "L": {
     "circle1size": 0,
     "circle2size": 0,
-    "circlex": 50,
+    "circlex": 25,
     "circle1y": 0,
     "circle2y": 200,
   
-    "linewidth": 15,
-    "lineheight": 40,
-    "linex": 80,
-    "liney": 160,
+    "linewidth": 25,
+    "lineheight": 200,
+    "linex": 25,
+    "liney": 0,
   
-    "rectanglewidth": 50,
-    "rectangleheight": 200,
+    "rectanglewidth": 100,
+    "rectangleheight": 50,
     "rectanglex": 0,
-    "rectangley": 0
+    "rectangley": 150
   },
   "M": {
     "circle1size": 100,
-    "circle2size": 1,
+    "circle2size": 2,
     "circlex": 50,
     "circle1y": 50,
-    "circle2y": 30,
+    "circle2y": 3,
 
     "linewidth": 33.3,
     "lineheight": 150,
