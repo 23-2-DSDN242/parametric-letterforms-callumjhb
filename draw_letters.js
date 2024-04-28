@@ -13,14 +13,6 @@ const strokeColour = "#000000";
 function drawLetter(letterData) {
   strokeWeight(4);
 
- // determine parameters for triangle   
- let triPointx = 50;
- let triPointy = letterData["triangleorientation"];
- let triLeftx = 0;
- let triLefty = 200*letterData["triangleorientation"];
- let triRightx = 100;
- let triRighty = 200*letterData["triangleorientation"];
- 
  // determine parameters for first circle
  let circSize1 = letterData["circle1size"];
  let circPosx = letterData["circlex"];
@@ -41,10 +33,6 @@ function drawLetter(letterData) {
  let lineHeight = letterData["lineheight"];
  let linePosx = letterData["linex"];
  let linePosy = letterData["liney"];
- 
- //draw triangle
- fill(blue);
- triangle(triPointx, triPointy, triLeftx, triLefty, triRightx, triRighty);
  
  // draw first circle
  fill(red);
@@ -67,9 +55,22 @@ function drawLetter(letterData) {
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
-  new_letter["size"]    = map(percent, 0, 100, oldObj["size"], newObj["size"]);
-  new_letter["offsetx"] = map(percent, 0, 100, oldObj["offsetx"], newObj["offsetx"]);
-  new_letter["offsety"] = map(percent, 0, 100, oldObj["offsety"], newObj["offsety"]);
+  new_letter["circle1size"] = map(percent, 0, 100, oldObj["circle1size"], newObj["circle1size"]);
+  new_letter["circle2size"] = map(percent, 0, 100, oldObj["circle2size"], newObj["circle2size"]);
+  new_letter["circlex"] = map(percent, 0, 100, oldObj["circlex"], newObj["circlex"]);
+  new_letter["circle1y"] = map(percent, 0, 100, oldObj["circle1y"], newObj["circle1y"]);
+  new_letter["circle2y"] = map(percent, 0, 100, oldObj["circle2y"], newObj["circle2y"]);
+  new_letter["linewidth"] = map(percent, 0, 100, oldObj["linewidth"], newObj["linewidth"]);
+  new_letter["lineheight"] = map(percent, 0, 100, oldObj["lineheight"], newObj["lineheight"]);
+  new_letter["linex"] = map(percent, 0, 100, oldObj["linex"], newObj["linex"]);
+  new_letter["liney"] = map(percent, 0, 100, oldObj["liney"], newObj["liney"]);
+  new_letter["rectanglewidth"] = map(percent, 0, 100, oldObj["rectanglewidth"], newObj["rectanglewidth"]);
+  new_letter["rectangleheight"] = map(percent, 0, 100, oldObj["rectangleheight"], newObj["rectangleheight"]);
+  new_letter["rectanglex"] = map(percent, 0, 100, oldObj["rectanglex"], newObj["rectanglex"]);
+  new_letter["rectangley"] = map(percent, 0, 100, oldObj["rectangley"], newObj["rectangley"]);
+
+
+
   return new_letter;
 }
 
