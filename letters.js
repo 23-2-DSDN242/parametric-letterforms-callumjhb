@@ -272,15 +272,15 @@ const alphabet = {
     "rectangley": 50
   },
   "P": {
-    "circle1size": 0,
-    "circle2size": 100,
+    "circle1size": 100,
+    "circle2size": 50,
     "circlex": 50,
-    "circle1y": 0,
+    "circle1y": 50,
     "circle2y": 50,
   
-    "linewidth": 15,
-    "lineheight": 25,
-    "linex": 65,
+    "linewidth": 0,
+    "lineheight": 0,
+    "linex": 50,
     "liney": 37.5,
   
     "rectanglewidth": 50,
@@ -306,10 +306,10 @@ const alphabet = {
     "rectangley": 50
   },
   "R": {
-    "circle1size": 0,
-    "circle2size": 100,
+    "circle1size": 100,
+    "circle2size": 50,
     "circlex": 50,
-    "circle1y": 0,
+    "circle1y": 50,
     "circle2y": 50,
   
     "linewidth": 25,
@@ -392,10 +392,10 @@ const alphabet = {
   },
   "W": {
     "circle1size": 100,
-    "circle2size": 1,
+    "circle2size": 2,
     "circlex": 50,
     "circle1y": 150,
-    "circle2y": 170,
+    "circle2y": 196,
 
     "linewidth": 33.3,
     "lineheight": 150,
