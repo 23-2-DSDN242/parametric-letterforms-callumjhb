@@ -1,6 +1,5 @@
 ## MDDN 242 2024 Assignment 2
-**Callum Benfell**
-**Ingenuo**
+**Callum Benfell: Ingenuo**
 
 **Early Inspiration**
 
