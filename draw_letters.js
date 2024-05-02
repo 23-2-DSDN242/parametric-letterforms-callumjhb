@@ -28,7 +28,7 @@ function drawLetter(letterData) {
  let rectPosx = letterData["rectanglex"];
  let rectPosy = letterData["rectangley"];
 
- // determine parameters for lines
+ // determine parameters for three lines
  let lineWidth = letterData["linewidth"];
  let lineHeight = letterData["lineheight"];
  let linePosx = letterData["linex"];
@@ -46,7 +46,7 @@ function drawLetter(letterData) {
  fill(yellow);
  rect(rectPosx, rectPosy, rectWidth, rectHeight);
 
- // draw lines
+ // draw three lines
  line(linePosx-lineWidth, linePosy, linePosx-lineWidth, linePosy+lineHeight);
  line(linePosx, linePosy, linePosx, linePosy+lineHeight);  
  line(linePosx+lineWidth, linePosy, linePosx+lineWidth, linePosy+lineHeight);

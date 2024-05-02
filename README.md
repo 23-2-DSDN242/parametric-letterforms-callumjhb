@@ -1,5 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/xQz3oEP8)
 ## MDDN 242 2024 Assignment 2
+**Callum Benfell
+Ingenuo**
 
 **Early Inspiration**
 
@@ -29,7 +31,7 @@ The bulk of the changes I made to my alphabet occurred at the interpolation stag
 
 **Exhibition**
 
-I decided to call my font “Ingenuo!”, which means ‘naive!’ in Italian (the native language of the Memphis group). I feel like I altered my initial concept a little, but retained the focus on making letters that feel playful, fun and naive. Another way I tried to make the font feel friendly was through the default character. I trialled a few options, like a child's face and a large ‘I’ but decided that a little mascot character felt the most coherent with the feel I was aiming for. The other words I used to exhibit my file are ‘!MDDN242’, ‘PROJECT2’ and ‘CALLUM B’. No points for guessing why.
+I decided to call my font “Ingenuo”, which means ‘naive’ in Italian (the native language of the Memphis group). I feel like I altered my initial concept a little, but retained the focus on making letters that feel playful, fun and naive. Another way I tried to make the font feel friendly was through the default character. I trialled a few options, like a child's face and a large ‘I’ but decided that a little mascot character felt the most coherent with the feel I was aiming for. The other words I used to exhibit my file are ‘!MDDN242’, ‘PROJECT2’ and ‘CALLUM B’. No points for guessing why.
 
 
 

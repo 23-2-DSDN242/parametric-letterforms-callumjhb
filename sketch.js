@@ -79,7 +79,6 @@ function setup () {
   stroke(strokeColor);
   strokeWeight(4);
 
-  // with no animation, redrawing the screen is not necessary
   noLoop();
 }
 
