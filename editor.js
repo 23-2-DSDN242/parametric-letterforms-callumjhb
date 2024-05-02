@@ -1,16 +1,19 @@
-/*******
- * define this "sliderInfo" variable
- * have an entry for each slider you want
- * and each row should be:
- * ["object_field", minimum_bound, maximum_bound]
- */
 const sliderInfo = [
-  ["size",       0, 100],
-  ["offsetx",  -30,  30],
-  ["offsety", -100, 100]
+  ["circle1size", 0, 100],
+  ["circle2size", 0, 100],
+  ["circlex", 0, 100],
+  ["circle1y", 0, 200],
+  ["circle2y", 0, 200],
+  ["linewidth", 0, 50],
+  ["lineheight", 0, 200],
+  ["linex", 0, 100],
+  ["liney", 0, 200],
+  ["rectanglewidth", 0, 100],
+  ["rectangleheight", 0, 200],
+  ["rectanglex", 0, 100],
+  ["rectangley", 0, 200]
+  
 ];
-
-// PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.
 
 const numSliders = sliderInfo.length;
 
@@ -18,10 +21,6 @@ if (typeof systemBackgroundColor === 'undefined') {
     var systemBackgroundColor = "#e3eded";
 }
 
-// this will use variables if they are already defined
-// var systemBackgroundColor = systemBackgroundColor || "#e3eded";
-
-// if everything is defined above, this should just work
 function sliderToDataObject() {
   let obj = {};
   for (let i=0; i<numSliders; i=i+1) {

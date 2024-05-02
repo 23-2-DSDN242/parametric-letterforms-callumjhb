@@ -1,40 +1,74 @@
 const canvasWidth = 960;
 const canvasHeight = 500;
 
-/*
- * my three variable per letter are:
- *
-   size: radius of the second circle (in pixels)
-   offsetx: x offset (in pixels) of the second circle
-            relative to the first one
-   offsety: y offset (in pixels) of the second circle
-            relative to the first one
- *
- */
-
 const letterA = {
-  "size": 80,
-  "offsetx": 0,
-  "offsety": 35
+  "triangleorientation": 1,
+
+  "circle1size": 0,
+  "circle2size": 0,
+  "circlex": 0,
+  "circle1y": -80,
+  "circle2y": -80,
+
+  "linewidth": 15,
+  "lineheight": 58,
+  "linex": 0,
+  "liney": 50,
+
+  "rectanglewidth": 0,
+  "rectangleheight": 0,
+  "rectanglex": 0,
+  "rectangley": 0
 }
 
 const letterB = {
-  "size": 150,
-  "offsetx": 0,
-  "offsety": -145
+  "trianglesize": 0,
+  "triangleorientation": 0,
+  
+  "circle1size": 100,
+  "circle2size": 100,
+  "circlex": 12.5,
+  "circle1y": -50,
+  "circle2y": 50,
+
+  "linewidth": 15,
+  "lineheight": 30,
+  "linex": 12.5,
+  "liney": 35,
+
+  "rectanglewidth": 25,
+  "rectangleheight": 200,
+  "rectanglex": -62.5,
+  "rectangley": -100
 }
 
 const letterC = {
-  "size": 100,
-  "offsetx": 30,
-  "offsety": 0
+  "trianglesize": 0,
+  "triangleorientation": 0,
+
+  "circle1size": 50,
+  "circle2size": 50,
+  "circlex": 25,
+  "circle1y": -75,
+  "circle2y": 75,
+
+  "linewidth": 0,
+  "lineheight": 0,
+  "linex": 0,
+  "liney": 0,
+
+  "rectanglewidth": 50,
+  "rectangleheight": 200,
+  "rectanglex": -50,
+  "rectangley": -100
 }
 
-const backgroundColor  = "#acf2e7";
+const backgroundColor  = "#fffae7";
 
-const darkGreen  = "#26b29d";
-const lightGreen  = "#30dfc4";
-const strokeColor  = "#0a2d27";
+const yellow  = "#FFE75E";
+const red  = "#FB5959";
+const blue = "#82B0EF";
+const strokeColor  = "#000000";
 
 function setup () {
   // create the drawing canvas, save the canvas element
@@ -45,7 +79,6 @@ function setup () {
   stroke(strokeColor);
   strokeWeight(4);
 
-  // with no animation, redrawing the screen is not necessary
   noLoop();
 }
 
@@ -64,16 +97,55 @@ function draw () {
 }
 
 function drawLetter(posx, posy, letterData) {
-  // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = posx + letterData["offsetx"];
-  let pos2y = posy + letterData["offsety"];
+  // determine parameters for triangle   
+  let triPointx = posx;
+  let triPointy = posy-85*letterData["triangleorientation"];
+  let triLeftx = posx-65*letterData["triangleorientation"];
+  let triLefty = posy+100*letterData["triangleorientation"];
+  let triRightx = posx+65*letterData["triangleorientation"];
+  let triRighty = posy+100*letterData["triangleorientation"];
+  
+  // determine parameters for first circle
+  let circSize1 = letterData["circle1size"];
+  let circPosx = posx + letterData["circlex"];
+  let circPos1y = posy + letterData["circle1y"];
 
-  // draw two circles
-  fill(darkGreen);
-  ellipse(posx, posy, 150, 150);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  // determine parameters for second circle
+  let circSize2 = letterData["circle2size"];
+  let circPos2y = posy + letterData["circle2y"];
+
+  // determine parameters for rectangle
+  let rectWidth = letterData["rectanglewidth"];
+  let rectHeight = letterData["rectangleheight"];
+  let rectPosx = posx + letterData["rectanglex"];
+  let rectPosy = posy + letterData["rectangley"];
+
+  // determine parameters for lines
+  let lineWidth = letterData["linewidth"];
+  let lineHeight = letterData["lineheight"];
+  let linePosx = posx + letterData["linex"];
+  let linePosy = posy + letterData["liney"];
+  
+  //draw triangle
+  fill(blue);
+  triangle(triPointx, triPointy, triLeftx, triLefty, triRightx, triRighty);
+  
+  // draw first circle
+  fill(red);
+  ellipse(circPosx, circPos1y, circSize1, circSize1);
+
+  // draw second circle
+  fill(red);
+  ellipse(circPosx, circPos2y, circSize2, circSize2);
+
+  // draw rectangle
+  fill(yellow);
+  rect(rectPosx, rectPosy, rectWidth, rectHeight);
+
+  // draw lines
+  line(linePosx-lineWidth, linePosy, linePosx-lineWidth, linePosy+lineHeight);
+  line(linePosx, linePosy, linePosx, linePosy+lineHeight);  
+  line(linePosx+lineWidth, linePosy, linePosx+lineWidth, linePosy+lineHeight);
 }
 
 function keyTyped() {
